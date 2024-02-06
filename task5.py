@@ -9,15 +9,14 @@ import numpy as np
 ROWS = 8
 COLS = 8
 
-board = np.tile([1,0], ROWS*COLS//2).transpose(ROWS, COLS)
+board = np.fromfunction(lambda i, j: (i+j)%2, (ROWS,COLS), dtype=int)
 print("Board:")
 print(board)
 
-"""
 MID_ROW = ROWS//2
 MID_COL = COLS//2
 
+middle = board[MID_ROW - 2:MID_ROW + 2, MID_COL - 2:MID_COL + 2]
 print("Middle:")
-middle = board[MID_ROW - 2::MID_ROW + 2, ]#MID_COL - 2::MID_COL + 2]
 print(middle)
-"""
+
